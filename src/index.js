@@ -8,13 +8,13 @@ import store from "./store/store";
 
 function render(state) {
   ReactDOM.render(
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <App
         price={state.price.result}
         pizzaName={state.pizzaName}
         doughType={state.dough.doughTypeArray}
         doughDiameter={state.dough.doughDiameterArray}
-        dispatch={store.dispatch.bind(store)}       
+        dispatch={store.dispatch.bind(store)}
       />
     </BrowserRouter>,
     document.getElementById("root")
